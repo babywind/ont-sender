@@ -39,5 +39,7 @@ public class Sender {
 
 		Scheduler scheduler = new Scheduler(resourceProvider);
 		scheduler.start();
+
+		new AccountScheduler(resourceProvider).start();
 	}
 }

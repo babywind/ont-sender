@@ -10,10 +10,10 @@ import com.trade.sender.service.OntManage;
 
 public class Scheduler extends Thread {
 
-	protected transient boolean alive = true;
-	protected final ResourceProvider resourceProvider;
-	protected final ConfigureProvider configureProvider;
-	protected final ServiceProvider serviceProvider;
+	private transient boolean alive = true;
+	private final ResourceProvider resourceProvider;
+	private final ConfigureProvider configureProvider;
+	private final ServiceProvider serviceProvider;
 //	protected static int EXPIRES_TOKEN_TIME = 0;
 
 	public Scheduler(ResourceProvider resourceProvider) {
@@ -27,7 +27,7 @@ public class Scheduler extends Thread {
 		while (alive) {
 			try {
 				// 创建新的用户临时钱包
-				createNewAccount();
+				//createNewAccount();
 
 				// ONT转入热钱包
 				ont_rqb();
@@ -47,6 +47,7 @@ public class Scheduler extends Thread {
 		}
 	}
 
+	/*
 	private void createNewAccount () {
 		try (ServiceSession serviceSession = serviceProvider.createServiceSession()) {
 			OntManage manage = serviceSession.getService(OntManage.class);
@@ -64,6 +65,7 @@ public class Scheduler extends Thread {
 			resourceProvider.log(e);
 		}
 	}
+	*/
 
 	private void transOutOnt () {
 		try (ServiceSession serviceSession = serviceProvider.createServiceSession()) {
