@@ -36,7 +36,7 @@ public class Scheduler extends Thread {
 				ont_lqb();
 
 				// ONT 转出
-				transOutOnt();
+				//transOutOnt();
 
 				// 休眠5分钟
 				sleep(1000 * 60 * 5);
@@ -65,7 +65,7 @@ public class Scheduler extends Thread {
 			resourceProvider.log(e);
 		}
 	}
-	*/
+
 
 	private void transOutOnt () {
 		try (ServiceSession serviceSession = serviceProvider.createServiceSession()) {
@@ -91,6 +91,7 @@ public class Scheduler extends Thread {
 			resourceProvider.log(throwable);
 		}
 	}
+*/
 
 	/**
 	 * ONT转入热钱包

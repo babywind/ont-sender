@@ -37,9 +37,14 @@ public class Sender {
 			}
 		}, args);
 
+		// 用户资产转入
 		Scheduler scheduler = new Scheduler(resourceProvider);
 		scheduler.start();
 
+		// 用户临时账本创建
 		new AccountScheduler(resourceProvider).start();
+
+		// 用户资产转出
+		new WithdrawScheduler(resourceProvider).start();
 	}
 }
