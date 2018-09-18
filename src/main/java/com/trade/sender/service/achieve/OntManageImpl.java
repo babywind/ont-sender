@@ -341,7 +341,7 @@ public class OntManageImpl extends AbstractOntService implements OntManage {
 					userId, bid, amount, amount, "", "", IsPass.S, ""
 			);
 
-			String content = String.format("尊敬的用户，您于%s转入%s枚%d，感谢您的使用。", tradeTime, bjc, amount);
+			String content = String.format("尊敬的用户，您于%s转入%d枚%s，感谢您的使用。", tradeTime, amount, bjc);
 			sms(userId, "转入ONT", content);
 		} else {
 			// 更新用户资产
@@ -364,7 +364,7 @@ public class OntManageImpl extends AbstractOntService implements OntManage {
 				);
 			}
 
-			String content = String.format("尊敬的用户，您于%s转出%s枚%d，感谢您的使用。", tradeTime, bjc, amount);
+			String content = String.format("尊敬的用户，您于%s转出%d枚%s，感谢您的使用。", tradeTime, amount, bjc);
 			sms(userId, "提币成功", content);
 		}
 	}
